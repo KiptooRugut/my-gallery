@@ -18,3 +18,18 @@ def photolab(request):
     return render(request, 'all-photos/photolab.html',{'photolab':photolab,'location':location, 'date':date,'category':category,})
 
 
+#search results functions
+def search(request):
+
+    if 'photo' in request.GET and request.GET["photo"]:
+        search_term = request.GET.get("photo")
+        searched_photo = Image.search_by_category(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'all-photos/search.html',{"message":message,"photos": searched_photo})
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'all-photos/search.html',{"message":message})
+
+
