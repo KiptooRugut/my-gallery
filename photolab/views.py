@@ -1,8 +1,8 @@
 from django.shortcuts import render
+from django.http.response import Http404
 from django.http import HttpResponse
 import datetime as dt
-
-from .models import Image, Location, User, Category
+from .models import Image,Location,User,Category
 
 # Create your views here.
 def welcome(request):
@@ -13,9 +13,9 @@ def photolab(request):
     location = Location.objects.all()
     photolab = Image.objects.all()
     date=dt.date.today()
-    users=User.objects.all()
+    user=User.objects.all()
     category=Category.objects.all()
-    return render(request, 'all-photos/photolab.html',{'photolab':photolab,'location':location, 'date':date,'category':category,})
+    return render(request, 'all-photos/photolab.html',{'photolab':photolab,'location':location, 'date':date,'category':category,'user':user})
 
 
 #search results functions
@@ -31,5 +31,13 @@ def search(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'all-photos/search.html',{"message":message})
+
+def photo(request,photo_id):
+    try:
+        photo = Image.objects.get(id=photo_id)
+        image_description=Image.objects.get(id=photo_id)
+    except ValueError:
+        raise Http404()
+    return render(request,"all-photos/photos.html", {"photo":photo, "image_decription":image_description})
 
 
