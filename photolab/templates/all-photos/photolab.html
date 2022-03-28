@@ -3,7 +3,7 @@
     <div class="row ">
         {% for pic in photolab %}
         <div class="col-md-6" data-toggle="modal" data-target="#showPicModal{{pic.id}}">
-            <img src="{{pic.image.url}}" alt="Image" class="img-responsive">
+            <img src="{{pic.image.url}}" alt="Image" class="img-responsive" style="height: 342px;width: 455px;">
             <!-- <a href=""><img src="{{pic.image.url}}" class="img-responsive" alt="Image"></a> -->
             <p>Image Category: <strong>{{pic.category}}</strong></p>
         </div>
