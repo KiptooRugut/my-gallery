@@ -17,6 +17,15 @@
               <span aria-hidden="true">&times;</span>
             </button>
                     </div>
+                    <div class="modal-body">
+                        <img src="{{pic.image.url}}" class="img-responsive" alt="{{pic.name}}">
+                        <p><strong>Description: </strong>{{pic.description}}</p>
+                        <div class="col-md-4">
+                            <p><strong>Category:</strong> {{pic.category}}</p>
+                            <p><strong>Image Location:</strong>{{pic.location}}</p>
+                            <p><strong>Published:</strong>{{pic.pub_date|timesince}}</p>
+                        </div>
+                    </div>
                     <div class="modal-footer">
                         <p><input class="form-control" type="text" value="{{pic.image.url}}" id="{{pic.id}}.url"><strong>Image Link</strong></p>
                     </div>
