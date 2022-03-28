@@ -4,10 +4,10 @@
 
 ## Screenshot
 ### Home page
-![IP](https://user-images.githubusercontent.com/488213b-7dad48e0b77b.png)
+![IP](https://github.com/KiptooRugut/my-gallery/blob/master/media/images/photolab1st.png)
 
 ### Single photo
-![IP1](https://user-images.githubusercontent.com/488b6.png)
+![IP1](https://github.com/KiptooRugut/my-gallery/blob/master/media/images/photolab2.png)
 
 
 ## Description
